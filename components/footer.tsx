@@ -7,15 +7,17 @@
  * @FilePath: \console-next\components\footer.tsx
  */
 import styles from "../styles/Home.module.css";
+import Link from 'next/link'
 const Footer = () => (
   <footer className={styles.footer}>
-    <a
-      href="http://www.beian.miit.gov.cn/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      粤ICP备18036032号
-    </a>
+    <Link href="http://www.beian.miit.gov.cn/" >
+      <a 
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        粤ICP备18036032号 @Copyright com.popochiu
+      </a>
+    </Link>
   </footer>
 );
 export default Footer

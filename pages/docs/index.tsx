@@ -7,38 +7,18 @@
  * @FilePath: \console-next\pages\about\index.tsx
  */
  
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from 'next' 
 import styles from '../../styles/Home.module.css'
-
-const About: NextPage = () => {
+import Layout from '@/components/layout'
+const Docs: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Docs</title>
-        <meta name="description" content="About" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+    <Layout title="popo - document"> 
+           <h1 className={styles.title}>
           这是一个文档
         </h1>
- 
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="http://www.beian.miit.gov.cn/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         粤ICP备18036032号
-        </a>
-      </footer>
-    </div>
+    </Layout>
+     
   )
 }
 
-export default About
+export default Docs

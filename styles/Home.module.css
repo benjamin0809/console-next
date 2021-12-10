@@ -12,6 +12,22 @@
   align-items: center;
 }
 
+.header {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0px -2px 20px 0px #c1c1c1;
+  height: 56px;
+  left: 0;
+  right: 0;
+}
+
+.header .logo{ 
+  height: 56px;
+  display: flex; 
+  align-items: center;
+  left: 12px; 
+} 
+
 .footer {
   display: flex;
   flex: 1;
