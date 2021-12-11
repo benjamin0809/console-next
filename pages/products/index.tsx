@@ -11,16 +11,16 @@ import type { NextPage } from "next";
 import styles from "../../styles/Home.module.css"; 
 import { Fragment } from "react";
 import Head from "next/head";
-const About: NextPage = () => {
+const Products: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Popochiu - 关于</title>
+        <title>Popochiu - 产品中心</title>
         <meta name="description" content="popochiu" /> 
       </Head>
-      <h1 className={styles.title}>关于</h1>
+      <h1 className={styles.title}>产品中心</h1>
     </Fragment>
   );
 };
 
-export default About;
+export default Products;
