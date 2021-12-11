@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 21:14:55
- * @LastEditTime: 2021-12-11 22:28:52
+ * @LastEditTime: 2021-12-11 22:56:04
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\components\layout.tsx
@@ -26,7 +26,7 @@ const BasicLayout: React.FC<LayoutProps> = (porps) => (
     <Head> 
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    {/* <div className={styles.container}>
+    { <div className={styles.container}>
       <Header />
       <main className={styles.main}>
         {
@@ -35,9 +35,9 @@ const BasicLayout: React.FC<LayoutProps> = (porps) => (
       </main>
 
       <Footer />
-    </div> */}
+    </div> }
 
-<Layout> 
+{/* <Layout> 
 <Header />
     <Content className={styles.main}> 
       <Layout className="site-layout-background" style={{ padding: '24px 0' }}>
@@ -50,7 +50,7 @@ const BasicLayout: React.FC<LayoutProps> = (porps) => (
       </Layout>
     </Content>
     <Footer /> 
-  </Layout>
+  </Layout> */}
 
   </>
 );
