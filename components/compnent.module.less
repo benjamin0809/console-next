@@ -23,3 +23,42 @@
     min-width: 300px;
   }
 }
+
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .links {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    .link {
+      color: #8c8c8c;
+      display: flex;
+      justify-content: flex-start; 
+      flex-direction: column;
+      cursor: pointer;
+
+      a{
+        margin-bottom: 12px;
+        text-decoration: none;
+        color: #8c8c8c; 
+        text-align: left;
+      }
+    }
+  }
+  .copyright {
+    margin-top: 24px;
+    display: flex;
+    width: 100%;;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+} 
