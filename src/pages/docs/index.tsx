@@ -9,7 +9,7 @@
 
 import type { NextPage } from "next";
 import styles from "../../styles/Home.module.css";
-import Layout from "@/components/layout";
+import Layout from "src/components/layout";
 import Head from "next/head";
 import { Fragment } from "react";
 interface DocsProps {

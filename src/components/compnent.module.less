@@ -22,9 +22,11 @@
   }
   @media (max-width: 600px) {
     .nav {
-      width: 60px;
-      // min-width: none !important;
-    }
+      width: 60px; 
+    } 
+    .siteName {
+      display: none;
+    } 
   }
 
  
@@ -59,7 +61,16 @@
       }
     }
   }
-  .copyright {
+  .copyright { 
+    display: flex;
+    width: 100%;;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: #8c8c8c;
+  }
+
+  .beian {
     margin-top: 24px;
     display: flex;
     width: 100%;;

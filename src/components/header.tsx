@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 21:15:01
- * @LastEditTime: 2021-12-12 12:24:34
+ * @LastEditTime: 2021-12-12 14:06:44
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\components\header.tsx
@@ -20,7 +20,7 @@ const Header = () => (
         <span className={styles.siteName}>PopoChiu</span>
         {/* <Button type="primary">Primary  </Button> */} 
         <div className={styles.nav}>
-          <Menu mode="horizontal">
+          <Menu mode="horizontal" triggerSubMenuAction="click">
             <Menu.Item key="1">
               <Link href="/about">关于</Link>
             </Menu.Item>
