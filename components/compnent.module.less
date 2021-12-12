@@ -10,18 +10,24 @@
     display: flex;
     align-items: center;
     margin-left: 12px;
-  }
-
+  } 
   .siteName {
     margin-left: 8px;
     font-weight: bold;
     font-size: 16px;
-  }
-
+  } 
   .nav{
     margin-left: auto;
-    min-width: 300px;
+    width: 250px;
   }
+  @media (max-width: 600px) {
+    .nav {
+      width: 60px;
+      // min-width: none !important;
+    }
+  }
+
+ 
 }
 
 

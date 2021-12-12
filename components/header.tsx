@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 21:15:01
- * @LastEditTime: 2021-12-11 22:21:37
+ * @LastEditTime: 2021-12-12 12:24:34
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\components\header.tsx
@@ -18,8 +18,7 @@ const Header = () => (
       <a className={styles.logo} rel="noopener noreferrer">
         <Image src="/logo.png" alt="Popochiu Logo" height={36} width={36} />
         <span className={styles.siteName}>PopoChiu</span>
-        {/* <Button type="primary">Primary  </Button> */}
-
+        {/* <Button type="primary">Primary  </Button> */} 
         <div className={styles.nav}>
           <Menu mode="horizontal">
             <Menu.Item key="1">
