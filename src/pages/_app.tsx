@@ -10,12 +10,43 @@ import "../styles/globals.css";
 import 'antd/dist/antd.css' 
 import Layout from "../components/layout";
 import type { AppProps } from "next/app";
+import { useRouter } from 'next/router'
+import 'nprogress/nprogress.css'
+import Nprogress from 'nprogress'
+import react, { useEffect } from 'react' 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+  const router = useRouter()
+    
+  console.log(router)
+  useEffect(() => {
+    Nprogress.configure({showSpinner: false})
+    router.events.on('routeChangeStart', () => {
+      Nprogress.start()
+    })
+
+    router.events.on('routeChangeComplete', () => {
+      Nprogress.done()
+    })
+
+    router.events.on('routeChangeError', () => {
+      Nprogress.done()
+    })
+  }, [])
+
+  console.log({ pageProps })
+
+  const getlayoutComponent = () => {
+    return  (<Layout>
+    <Component {...pageProps} />
+  </Layout>)
+  }
+
+  const getComponent = () => {
+    return  (<Component {...pageProps} />)
+  }
+
+  return (getlayoutComponent()
   );
 }
 
