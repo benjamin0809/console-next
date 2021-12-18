@@ -18,9 +18,17 @@ const Header = () => (
       <a className={styles.logo} rel="noopener noreferrer">
         <Image src="/logo.png" alt="Popochiu Logo" height={36} width={36} />
         <span className={styles.siteName}>PopoChiu</span>
+        </a>
+    </Link>
         {/* <Button type="primary">Primary  </Button> */} 
         <div className={styles.nav}>
           <Menu mode="horizontal" triggerSubMenuAction="click">
+          <Menu.Item key="5">
+              <a href="//console.popochiu.com" target={'_blank'} >控制台</a>
+            </Menu.Item>
+          <Menu.Item key="4">
+              <a href="//shop.popochiu.com" target="_blank">商城</a>
+            </Menu.Item>
             <Menu.Item key="1">
               <Link href="/about">关于</Link>
             </Menu.Item>
@@ -32,8 +40,7 @@ const Header = () => (
             </Menu.Item>
           </Menu>
         </div>
-      </a>
-    </Link>
+    
   </header>
 );
 export default Header;

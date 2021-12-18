@@ -11,16 +11,16 @@ import Link from 'next/link'
 
 const links = [{
   category: '资源',
-  links: ['文档','学习','案例','博客', '分析','配置', '直播' ]
+  links: [{name: '文档', url: '/docs'},{name: '学习', url: '/learn'},{name: '案例', url: '/example'},{name: '博客', url: '/blog'},{name: '分析', url: '/analysis'},  {name: '直播', url: '/live'}  ]
 },{
   category: '更多',
-  links: ['商务','联系', 'Releases' ]
+  links: [{name: '商务', url: '/bussiness'},{name: '联系', url: '/contact'}, {name: 'Releases', url: '/release'} ]
 },{
   category: '关于',
-  links: ['Github','Open Source Software' ]
+  links: [{name: 'Github', url: '/github'},{name: 'Open Source Software', url: '/github'} ]
 },{
   category: '法律',
-  links: ['隐私政策' ]
+  links: [{name: '隐私政策', url: '/private'} ]
 }]
 const Footer = () => (
   <footer className={styles.footer}>
@@ -31,7 +31,7 @@ const Footer = () => (
           <h4 key={item.category}>{item.category}</h4>
           <div className={styles.link}>
             {
-              item.links.map(i => <Link href={`#${i}`} key={i}>{i}</Link>)
+              item.links.map(i => <Link href={`${i.url}`} key={i.name}>{i.name}</Link>)
             }
           </div>
           </div>

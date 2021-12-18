@@ -23,6 +23,7 @@ const Docs: NextPage<DocsProps> = ({ stars }) => {
         <meta name="description" content="popochiu docs document" />
       </Head>
       <h1 className={styles.title}>这是一个文档</h1>
+      <div>{stars}</div>
     </Fragment>
   );
 };
