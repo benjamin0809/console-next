@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 20:21:15
- * @LastEditTime: 2021-12-12 14:59:48
+ * @LastEditTime: 2021-12-14 00:06:22
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\pages\about\index.tsx
@@ -11,6 +11,7 @@ import type { NextPage } from "next";
 import styles from "../../styles/Home.module.css";
 import { Fragment } from "react";
 import Head from "next/head";
+import Image from 'next/image'
 const { Meta } = Card;
 const Products: NextPage = () => {
   return (
@@ -27,8 +28,11 @@ const Products: NextPage = () => {
             <Card
               style={{ width: 300,  marginBottom: 24 }}
               cover={
-                <img
+                <Image
                   alt="example"
+                  // width
+                  width={120}
+                  height={520}
                   src="https://cdn.popochiu.com/u%3D1029292505%2C440879667%26fm%3D26%26fmt%3Dauto.webp"
                 />
               }
@@ -40,7 +44,7 @@ const Products: NextPage = () => {
               />
             </Card>
           </Col> 
-          <Col xs={20} sm={16} md={12} lg={8} xl={4}>
+          {/* <Col xs={20} sm={16} md={12} lg={8} xl={4}>
             <Card
               style={{ width: 300,  marginBottom: 24 }}
               cover={
@@ -125,7 +129,7 @@ const Products: NextPage = () => {
                 description="This is the description"
               />
             </Card> 
-          </Col>
+          </Col> */}
 
 
 
