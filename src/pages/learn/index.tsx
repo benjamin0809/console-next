@@ -8,7 +8,7 @@
  */
  
 import type { NextPage } from 'next' 
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.less'
 import Layout from 'src/components/layout'
 import { Fragment } from 'react'
 import Head from 'next/head'

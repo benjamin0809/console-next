@@ -10,8 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-} 
-
+}
 
 .title a {
   color: #0070f3;
@@ -51,6 +50,7 @@
 }
 
 .grid {
+  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,5 +97,38 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+.carousel {
+  margin-top: -10rem;
+  width: calc(100vw - 17px);
+  height: 40vh;
+  background-color: #1890ff;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: linear-gradient(270deg, rgba(22, 22, 26, 0), #16161a);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 160px;
+    bottom: 0;
+  }
+  &::after {
+    content: ""; 
+    background-image: linear-gradient(270deg,#16161a, rgba(22, 22, 26, 0) );
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 160px;
+  }
+  .center {
+    height: 300px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

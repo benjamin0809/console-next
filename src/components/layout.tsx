@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 21:14:55
- * @LastEditTime: 2021-12-11 22:56:04
+ * @LastEditTime: 2021-12-21 23:08:57
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\components\layout.tsx
@@ -9,7 +9,7 @@
 
 import React from "react";
 import Head from 'next/head'
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.less";
 import styles1 from "./compnent.module.less"; 
 import Footer from "./footer";
 import Header from "./header";

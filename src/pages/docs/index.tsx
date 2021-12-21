@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 20:21:15
- * @LastEditTime: 2021-12-21 19:19:22
+ * @LastEditTime: 2021-12-21 23:25:14
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\pages\about\index.tsx
  */
 
 import type { NextPage } from "next";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Home.module.less";
 import Layout from "src/components/layout";
 import Head from "next/head";
 import { Fragment, useState } from "react";
