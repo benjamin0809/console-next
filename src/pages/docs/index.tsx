@@ -15,6 +15,7 @@ import { Fragment } from "react";
 import { Avatar, Card, Col, Row } from "antd";
 import Meta from "antd/lib/card/Meta";
 import Image from 'next/image'
+import BenImage from "@/components/ben-image";
 interface DocsProps {
   article: ArticleDto[];
   images: ImageDto[];
@@ -32,6 +33,7 @@ type ArticleDto = {
   createTime?: any;
   articleTime?: any;
   modifiedTime?: any;
+  imageArr?: string[]
 }
 
 type ImageDto = {
@@ -53,11 +55,11 @@ const ImageComp: React.FC<ImageDto> = (props) => {
         />
       }
     >
-      <Meta
+      {/* <Meta
         avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
         title="Card title"
         description="This is the description"
-      />
+      /> */}
     </Card>
   </Col>  )
 }
@@ -73,11 +75,7 @@ const Docs: NextPage<DocsProps> = (props) => {
         <ul>
           {
             props.article.map((item) => {
-              return (
-                <li key={item.id}>
-                  <span key={item.id}>{item.title}</span>
-                </li>
-              )
+              return (<BenImage key={item.articleid} images={item.imageArr!}/>)
             })
           } 
         </ul>
@@ -104,6 +102,8 @@ Docs.getInitialProps = async (ctx) => {
   const article: ArticleDto[]  = json.reduce((acc:  ArticleDto[] , cur: ArticleDto) => {
     if(!acticles.has(cur.articleid)) {
       acticles.add(cur.articleid)
+      const images = cur.images.split(',')
+      cur.imageArr = images
       acc.push(cur)
       return acc
     } else {
