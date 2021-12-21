@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 20:21:15
- * @LastEditTime: 2021-12-19 23:01:32
+ * @LastEditTime: 2021-12-21 19:19:22
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\pages\about\index.tsx
@@ -11,10 +11,9 @@ import type { NextPage } from "next";
 import styles from "../../styles/Home.module.css";
 import Layout from "src/components/layout";
 import Head from "next/head";
-import { Fragment } from "react";
-import { Avatar, Card, Col, Row } from "antd";
-import Meta from "antd/lib/card/Meta";
-import Image from 'next/image'
+import { Fragment, useState } from "react";
+import { Avatar, Card, Col, Row, Image } from "antd";
+import Meta from "antd/lib/card/Meta"; 
 import BenImage from "@/components/ben-image";
 interface DocsProps {
   article: ArticleDto[];
@@ -63,30 +62,21 @@ const ImageComp: React.FC<ImageDto> = (props) => {
     </Card>
   </Col>  )
 }
-const Docs: NextPage<DocsProps> = (props) => {
+const Docs: NextPage<DocsProps> = (props) => { 
   return (
     <Fragment>
       <Head>
         <title>Popochiu - 文档</title>
         <meta name="description" content="popochiu docs document" />
       </Head>
-      <h1 className={styles.title}>这是一个文档</h1>
-      <div>
-        <ul>
-          {
+      <h1 className={styles.title}>这是一个文档</h1>  
+
+      <Row >
+      {
             props.article.map((item) => {
               return (<BenImage key={item.articleid} images={item.imageArr!}/>)
             })
           } 
-        </ul>
-      </div>
-
-      <Row >
-        {
-          props.images.map((item) => {
-            return (<ImageComp key={item.key} url={item.url}/>)
-          })
-        }
         
         </Row>
       <div>{props.images.length}</div>
