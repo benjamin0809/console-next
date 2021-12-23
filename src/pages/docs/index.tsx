@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 20:21:15
- * @LastEditTime: 2021-12-21 23:25:14
+ * @LastEditTime: 2021-12-23 23:37:30
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\pages\about\index.tsx
@@ -11,13 +11,16 @@ import type { NextPage } from "next";
 import styles from "../../styles/Home.module.less";
 import Layout from "src/components/layout";
 import Head from "next/head";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Avatar, Card, Col, Row, Image } from "antd";
 import Meta from "antd/lib/card/Meta"; 
 import BenImage from "@/components/ben-image";
 interface DocsProps {
   article: ArticleDto[];
   images: ImageDto[];
+  hasMore: boolean
+  page: number
+  pageSize: number
 }
 
 
@@ -63,6 +66,9 @@ const ImageComp: React.FC<ImageDto> = (props) => {
   </Col>  )
 }
 const Docs: NextPage<DocsProps> = (props) => { 
+  const [article, setArticle] = useState(props.article)
+  const [hasMore, setHasMore] = useState(props.hasMore)
+  const [page, setPage] = useState(props.page) 
   return (
     <Fragment>
       <Head>
@@ -73,23 +79,35 @@ const Docs: NextPage<DocsProps> = (props) => {
 
       <Row >
       {
-            props.article.map((item) => {
+            article.map((item) => {
               return (<BenImage key={item.articleid} images={item.imageArr!}/>)
             })
           } 
         
         </Row>
       <div>{props.images.length}</div>
-      <div>{props.article.length}</div>
+      <div>{article.length}</div>
+
+      {
+        hasMore && (<div onClick={async () => {
+          setPage(page + props.pageSize) 
+          const {article: art, hasMore}=  await getArticle(page + props.pageSize)
+          setHasMore(hasMore)
+          const newData = article.concat(art)
+          console.log(newData)
+          setArticle(newData)
+        }}>加载更多</div>)
+      }
+      
     </Fragment>
   );
 };
 
-Docs.getInitialProps = async (ctx) => {
-  const res = await fetch("https://api.popochiu.com/hupu");
-  const json = await res.json();
+const getArticle = async (page = 1, pageSize: number = 30) => {
+  const res = await fetch(`https://api.popochiu.com/hupu/page?page=${page}&pageSize=${pageSize}&name`);
+  const { data } = await res.json();
   const acticles = new Set()
-  const article: ArticleDto[]  = json.reduce((acc:  ArticleDto[] , cur: ArticleDto) => {
+  const article: ArticleDto[]  = data.data.reduce((acc:  ArticleDto[] , cur: ArticleDto) => {
     if(!acticles.has(cur.articleid)) {
       acticles.add(cur.articleid)
       const images = cur.images.split(',')
@@ -115,7 +133,13 @@ Docs.getInitialProps = async (ctx) => {
       return acc
     } 
   }, [])
-  return { article, images };
+  return { article, images, page, pageSize, hasMore: page + pageSize < data.total }; 
+}
+Docs.getInitialProps = async (ctx) => {
+  const page = 1
+  const pageSize = 30
+  const data = await getArticle() 
+  return data;
 };
 
 export default Docs;
