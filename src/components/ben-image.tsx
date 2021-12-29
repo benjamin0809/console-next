@@ -13,6 +13,7 @@ import styles from './compnent.module.less'
 type BenImage = {
   frontCoverSrc?: string;
   images: string[];
+  onClick: (imgs: any[]) => void
 };
 const BenImage: React.FC<BenImage> = (props) => {
   const [visible, setVisible] = useState(false);
@@ -26,18 +27,9 @@ const BenImage: React.FC<BenImage> = (props) => {
         placeholder={true}
         height={300}
         src={frontCoverSrc}
-        onClick={() => setVisible(true)}
+        onClick={ () => { props.onClick(props.images) }}
       />
-      </Col>
-      <div style={{ display: 'none' }}>
-        <Image.PreviewGroup
-          preview={{ visible, onVisibleChange: (vis) => setVisible(vis)}}
-        >
-          {props.images.map((item) => { 
-            return <Image src={item + '-h4'} key={item} />;
-          })}
-        </Image.PreviewGroup>
-      </div>
+      </Col> 
       </>
   );
 };

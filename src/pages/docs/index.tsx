@@ -80,7 +80,7 @@ const Docs: NextPage<DocsProps> = (props) => {
       <Row >
       {
             article.map((item) => {
-              return (<BenImage key={item.articleid} images={item.imageArr!}/>)
+              // return (<BenImage key={item.articleid} images={item.imageArr!}/>)
             })
           } 
         
