@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 20:21:15
- * @LastEditTime: 2021-12-29 23:59:41
+ * @LastEditTime: 2021-12-30 21:23:43
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \console-next\pages\about\index.tsx
@@ -67,7 +67,7 @@ const Learn: NextPage<LearnProps> = (props) => {
           preview={{ visible, onVisibleChange: (vis) => setVisible(vis)}}
         >
           {previewGroup.map((item) => { 
-            return <Image src={item + '-h4'} key={item} />;
+            return <Image src={item + '-o60'} key={item} />;
           })}
         </Image.PreviewGroup>
       </div>
