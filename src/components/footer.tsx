@@ -28,7 +28,7 @@ const Footer = () => (
       {
         links.map(item => {
           return <div key={`${item.category} + o`} className={styles.category}>
-          <h4 key={item.category}>{item.category}</h4>
+          <h2 key={item.category}>{item.category}</h2>
           <div className={styles.link}>
             {
               item.links.map(i => <Link href={`${i.url}`} key={i.name}>{i.name}</Link>)
